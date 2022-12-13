@@ -1,0 +1,23 @@
+#home {
+    height:calc(100vh + 53px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vw;
+  }
+  
+  #home .name {
+    color: #e31b6d;
+  }
+  
+  #greeting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    height: fit-content;
+  }
+
+  #greeting span {
+    height: fit-content;
+  }
