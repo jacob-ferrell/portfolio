@@ -42,7 +42,8 @@ nav {
   justify-content: center;
   width: 100vw;
   margin-top: 2vh;
-  z-index: 0;
+  z-index: 2;
+  font-size: 2vh;
 }
 
 #links-container {
@@ -52,7 +53,8 @@ nav {
 }
 
 section {
-  position: relative;
+  height:calc(100vh);
+
 }
 
 
