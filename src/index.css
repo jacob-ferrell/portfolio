@@ -1,3 +1,7 @@
+html, body {
+  margin: 0;
+}
+
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -40,10 +44,12 @@ nav {
   left: 0;
   display: flex;
   justify-content: center;
-  width: 100vw;
-  margin-top: 2vh;
+  width: 100%;
+  padding-top: 2vh;
+  padding-bottom: 1vh;
   z-index: 2;
   font-size: 2vh;
+  background-color: #242424;
 }
 
 #links-container {
@@ -53,14 +59,42 @@ nav {
 }
 
 section {
-  height:calc(100vh);
-
+  min-height: 100vh;
+  min-height: fill-available;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100vw;
 }
 
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+@media(prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+.section-heading {
+  font-size: 5vh;
+  color: #e31b6d;
+
 }
 
 button {

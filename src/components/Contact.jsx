@@ -1,5 +1,5 @@
 const Contact = props => {
-    return <span id="contact"></span>
+    return <section id="contact"></section>
 }
 
 export default Contact;
