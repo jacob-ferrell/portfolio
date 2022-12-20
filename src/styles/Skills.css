@@ -1,5 +1,4 @@
 #skills {
-    
 }
 
 .skills {
@@ -14,11 +13,31 @@
     gap: .5vh;
     position: relative;
 }
+@media screen and (max-width: 600px) {
+    #root .skills {
+        width: 27vw;
+        height: 20vh;
+    }
+    #root .skill-heading {
+        font-size: 3vw;
+    }
+    #root .skill-item {
+        font-size: 2.7vw;
+    }
+}
 
 .skills-container {
     display: flex;
     justify-content: center;
     gap: 2vw;
+    color: white;
+}
+#skills .back-end-container {
+    transition-delay: 200ms;
+}
+
+#skills .other-skills {
+    transition-delay: 400ms;
 }
 
 .skill-item img {
@@ -27,10 +46,12 @@
 }
 
 .skill-heading {
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2.2vh;
+    font-weight: bold;
     background-color: #e31b6d;
     position: absolute;
     top: 0;

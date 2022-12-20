@@ -1,6 +1,13 @@
-html, body {
+html, body, #root {
   margin: 0;
+  scroll-behavior: smooth;
 }
+html {
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
+  overflow-x: hidden;
+}
+
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -28,6 +35,9 @@ a {
   color: #e31b6d;
   transition: .4s;
 }
+.section-in-view {
+  color: #e31b6d;
+}
 
 body {
   margin: 0;
@@ -42,14 +52,14 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
+  display: none;
   justify-content: center;
   width: 100%;
   padding-top: 2vh;
   padding-bottom: 1vh;
   z-index: 2;
   font-size: 2vh;
-  background-color: #242424;
+  background-color: #001220;
 }
 
 #links-container {
@@ -59,15 +69,25 @@ nav {
 }
 
 section {
+  padding-top: 4vh;
   min-height: 100vh;
-  min-height: fill-available;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-width: 100vw;
+  max-width: 100vw;
 }
 
-.hidden {
+@media screen and (max-width: 600px) {
+  section {
+    min-height: calc(100vh + 50px);
+  }
+  .section-heading {
+    margin-top: 50px;
+  }
+}
+
+#root .hidden {
   opacity: 0;
   filter: blur(5px);
   transform: translateX(-100%);
@@ -80,7 +100,7 @@ section {
   }
 }
 
-.show {
+#root .show {
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);
@@ -108,8 +128,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
+#greeting button:hover {
+  background-color: #0869fa;
+  transition-delay: 0 !important;
+  transition: 1s;
+
 }
 button:focus,
 button:focus-visible {

@@ -1,19 +1,93 @@
 #home {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8vh;
+  padding-top: 0;
+  position: relative;
+  overflow-x: hidden;
+}
+@media screen and (max-width: 600px) {
+  #root #home {
+    font-size: 5vh;
   }
-  
-  #home .name {
-    color: #e31b6d;
+
+  #root #greeting {
+    gap: 2vh;
+    padding-bottom: 5vh;
   }
-  
-  #greeting {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  #root .wave {
+    aspect-ratio: 450/900;
   }
-#greeting div {
-    height: 4vw;
+  #root .layer1 {
+    background-image: url("../assets/backgrounds/wave-mobile.svg"), url("../assets/backgrounds/wave-upper-mobile.svg");
+  }
+}
+
+#home .name {
+  color: #eb005e;
+}
+
+#greeting {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4vh;
+  justify-content: flex-start;
+  z-index: 4;
+}
+
+#text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+#buttons-container {
+  display: flex;
+  flex-direction: column;
+}
+#greeting #resume {
+  transition-delay: 1250ms;
+}
+#greeting #view-work {
+  transition-delay: 1700ms;
+}
+#greeting .name, #greeting .description {
+  cursor: default;
+
+}
+#greeting .description {
+  color: white;
+  font-size: 6vh;
+}
+.wave {
+  aspect-ratio: 960/300;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#wave {
+  position: absolute;
+  bottom: 0;
+  width:400vw;
+  max-width: 5500px;
+  z-index: 3;
+  cursor: default;
+}
+
+.layer1 {
+  background-image:  url("../assets/backgrounds/stars.png");
+}
+.home-button {
+  border: 2px solid white;
+  border-radius: 0;
+  background-color: #eb005e00;
+  font-size: 1.5vh;
+  color: white;
+  width: 17vh;
+  max-width: 195px;
+  margin-bottom: .8vh;
 }
