@@ -4,8 +4,12 @@ html, body, #root {
 }
 html {
   height: 100%;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
   overflow-x: hidden;
+}
+
+section {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
+
 }
 
 
@@ -31,12 +35,13 @@ a {
   color: white;
   text-decoration: inherit;
 }
-#links-container a:hover {
+a:hover {
   color: #e31b6d;
   transition: .4s;
 }
 .section-in-view {
   color: #e31b6d;
+  transition: .5s;
 }
 
 body {
@@ -46,20 +51,21 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 nav {
   position: fixed;
   top: 0;
   left: 0;
-  display: none;
+  display: flex;
   justify-content: center;
   width: 100%;
   padding-top: 2vh;
   padding-bottom: 1vh;
-  z-index: 2;
+  z-index: 5;
   font-size: 2vh;
-  background-color: #001220;
+  background-color: transparent;
 }
 
 #links-container {
@@ -128,7 +134,7 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-#greeting button:hover {
+button-hover {
   background-color: #0869fa;
   transition-delay: 0 !important;
   transition: 1s;

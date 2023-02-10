@@ -7,20 +7,32 @@
   position: relative;
   overflow-x: hidden;
 }
-@media screen and (max-width: 600px) {
-  #root #home {
-    font-size: 5vh;
+
+.description {
+  text-align: center;
+}
+@media screen and (max-width: 900px) {
+  #home {
+    font-size: 10vw;
   }
+
+  #home .description {
+    font-size: 7vw;
+  }
+
+  .description
 
   #root #greeting {
     gap: 2vh;
     padding-bottom: 5vh;
   }
-  #root .wave {
-    aspect-ratio: 450/900;
+  #root #wave {
+    aspect-ratio: 600/900;
+    background-position: bottom;
+    height: 100%;
   }
   #root .layer1 {
-    background-image: url("../assets/backgrounds/wave-mobile.svg"), url("../assets/backgrounds/wave-upper-mobile.svg");
+    background-image: url("../assets/backgrounds/wave-mobile2.svg"), url("../assets/backgrounds/wave-upper-mobile.svg");
   }
 }
 
@@ -56,9 +68,10 @@
 }
 #greeting .name, #greeting .description {
   cursor: default;
+  text-align: center;
 
 }
-#greeting .description {
+.description {
   color: white;
   font-size: 6vh;
 }

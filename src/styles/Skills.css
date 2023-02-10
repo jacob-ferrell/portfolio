@@ -18,7 +18,7 @@
         width: 27vw;
         height: 20vh;
     }
-    #root .skill-heading {
+    #skills .skill-heading {
         font-size: 3vw;
     }
     #root .skill-item {
@@ -32,12 +32,16 @@
     gap: 2vw;
     color: white;
 }
+
+#skills .front-end-container {
+    transition-delay: 400ms;
+}
 #skills .back-end-container {
-    transition-delay: 200ms;
+    transition-delay: 600ms;
 }
 
 #skills .other-skills {
-    transition-delay: 400ms;
+    transition-delay: 800ms;
 }
 
 .skill-item img {

@@ -9,13 +9,15 @@ import bootstrap from "../assets/softwareLogos/bootstrap.png";
 import node from "../assets/softwareLogos/node.png";
 import express from "../assets/softwareLogos/express.png";
 import mongo from "../assets/softwareLogos/mongo.png";
+import django from '../assets/softwareLogos/django.jpg'
+import python from '../assets/softwareLogos/python.png'
 
 const Skills = (props) => {
   const createSkills = (skills) => {
     return Object.keys(skills).map((skill) => {
       return (
         <div className="skill-item" key={skill}>
-          <img src={skills[skill]}></img>
+          <img className="skill-image" src={skills[skill]}></img>
           <span>{skill}</span>
         </div>
       );
@@ -34,6 +36,8 @@ const Skills = (props) => {
     "Node.js": node,
     "Express.js": express,
     MongoDB: mongo,
+    Django: django,
+    Python: python
   };
 
   const versionControl = {

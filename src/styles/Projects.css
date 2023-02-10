@@ -1,3 +1,9 @@
+    
+    .projects-container {
+        display: flex;
+        gap: 2rem;
+    }
+
     .project {
         color: white;        
         background-color: rgb(53, 53, 53);
@@ -9,8 +15,54 @@
         align-items: center;
         gap: .5vh;
         position: relative;
+        width: 20vw;
+        height: fit-content;
+    }
+
+    #root #bug-tracker {
+        transition-delay: 400ms;
+    }
+
+    #root #cookbook {
+        transition-delay: 600ms;
+    }
+
+    .project img {
+        width : 100%;
+
+        margin-top: 1rem;
+    }
+
+    .project-description {
+        text-align: center;
+        height: 2rem;
+        line-height: 1rem;
+    }
+
+    #projects .project-container .project:first-child {
+        transition-delay: 400ms;
     }
 
     img {
         cursor: pointer;
+    }
+    @media screen and (max-width: 600px) {
+        .projects-container {
+            flex-direction: column;
+        }
+        .project {
+            width: 50vw;
+            height: 65vw;
+            line-height: .5rem;
+            justify-content: space-between;
+            
+
+        }
+        .skill-heading {
+            font-size: 1rem;
+        }
+        .project-description {
+            font-size: .7rem;
+            height: 3rem;
+        }
     }
