@@ -4,16 +4,11 @@ import Home from "./components/Home";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import './styles/stars.css';
+import "./styles/stars.css";
 import NoScroll from "./components/NoScroll";
 import RedirectOnReload from "./components/RedirectOnReload";
 
 function App() {
-  const [showEnlarged, setShowEnlarged] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(false);
-  const [currentSection, setCurrentSection] = useState('home');
-  const [sectionInView, setSectionInView] = useState(null);
-
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -23,7 +18,7 @@ function App() {
           .querySelectorAll(".links-container a")
           .forEach((link) => link.classList.remove("section-in-view")); */
         if (entry.isIntersecting) {
-          entry.target.classList.add("show")
+          entry.target.classList.add("show");
           /* if (entry.target.classList.includes('home-button')) {
             entry.target.addEventListener('mouseover', () => {
               const button = entry.target;
@@ -34,7 +29,7 @@ function App() {
           //headerLink.classList.add("section-in-view");
         } else {
           entry.target.classList.remove("show");
-          entry.target.classList.remove('button-hover')
+          entry.target.classList.remove("button-hover");
           //headerLink.classList.remove("section-in-view");
         }
       });
@@ -44,55 +39,53 @@ function App() {
   }, []);
 
   function handleLinkClick(e) {
-    document.querySelectorAll('#links-container a').forEach(link => {
-      link.classList.remove("section-in-view")
-    })
-    e.target.classList.add('section-in-view')
+    document.querySelectorAll("#links-container a").forEach((link) => {
+      link.classList.remove("section-in-view");
+    });
+    e.target.classList.add("section-in-view");
   }
 
   return (
-    <NoScroll>
-      {showEnlarged ? (
-        <EnlargedScreenshot
-          show={showEnlarged}
-          handleClose={() => setShowEnlarged(false)}
-          image={selectedImage}
-        />
-      ) : null}
-      <div className="App">
-      {/* <RedirectOnReload /> */}
-        <nav>
-          <div id="links-container">
-            <a href="#home" id="greeting-link" onClick={handleLinkClick} className="section-in-view">
-              Home
-            </a>
-            {/* <a href="#about" id="about-link">
+      <NoScroll>
+        <div className="App">
+          {/* <RedirectOnReload /> */}
+          <nav>
+            <div id="links-container">
+              <a
+                href="#home"
+                id="greeting-link"
+                onClick={handleLinkClick}
+                className="section-in-view"
+              >
+                Home
+              </a>
+              {/* <a href="#about" id="about-link">
               About
             </a> */}
-            <a href="#skills" id="skills-heading-link" onClick={handleLinkClick}>
-              Skills
-            </a>
-            <a href="#projects" id="projects-link" onClick={handleLinkClick}>
-              Projects
-            </a>
-            <a href="#contact" id="contact-link" onClick={handleLinkClick}>
-              Contact
-            </a>
+              <a
+                href="#skills"
+                id="skills-heading-link"
+                onClick={handleLinkClick}
+              >
+                Skills
+              </a>
+              <a href="#projects" id="projects-link" onClick={handleLinkClick}>
+                Projects
+              </a>
+              <a href="#contact" id="contact-link" onClick={handleLinkClick}>
+                Contact
+              </a>
+            </div>
+          </nav>
+          <div className="content">
+            <Home className="hidden" />
+            <Skills />
+            <Projects
+            />
+            <Contact />
           </div>
-        </nav>
-        <div className="content">
-          <Home className="hidden" />
-          <Skills />
-          <Projects
-            showEnlarged={showEnlarged}
-            setShowEnlarged={setShowEnlarged}
-            selectedImage={selectedImage}
-            setSelectedImage={setSelectedImage}
-          />
-          <Contact />
         </div>
-      </div>
-    </NoScroll>
+      </NoScroll>
   );
 }
 
