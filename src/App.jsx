@@ -60,7 +60,7 @@ function App() {
         />
       ) : null}
       <div className="App">
-      <RedirectOnReload />
+      {/* <RedirectOnReload /> */}
         <nav>
           <div id="links-container">
             <a href="#home" id="greeting-link" onClick={handleLinkClick} className="section-in-view">
