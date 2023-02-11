@@ -49,6 +49,8 @@
     @media screen and (max-width: 600px) {
         .projects-container {
             flex-direction: column;
+            margin-bottom: 10vh;
+            gap: 1rem;
         }
         .project {
             width: 50vw;
