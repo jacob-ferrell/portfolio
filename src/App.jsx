@@ -39,10 +39,14 @@ function App() {
   }, []);
 
   function handleLinkClick(e) {
+    clearLinks();
+    e.target.classList.add("section-in-view");
+  }
+
+  function clearLinks() {
     document.querySelectorAll("#links-container a").forEach((link) => {
       link.classList.remove("section-in-view");
     });
-    e.target.classList.add("section-in-view");
   }
 
   return (
@@ -78,7 +82,7 @@ function App() {
             </div>
           </nav>
           <div className="content">
-            <Home className="hidden" />
+            <Home className="hidden" clearLinks={clearLinks}/>
             <Skills />
             <Projects
             />

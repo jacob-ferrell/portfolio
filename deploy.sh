@@ -3,8 +3,6 @@
 # abort on errors
 set -e
 
-#delete previous dist directory
-rm -r dist
 
 # build
 npm run build

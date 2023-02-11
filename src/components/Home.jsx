@@ -51,7 +51,8 @@ const Home = (props) => {
             href="#projects"
             className="home-button hidden"
             onClick={() => {
-              window.location.href = "#projects"
+              /* window.location.href = "#projects" */
+              document.getElementById('projects-link').click();
             }}
           >
             My Projects
