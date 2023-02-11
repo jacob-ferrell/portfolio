@@ -1,6 +1,7 @@
-html, body, #root {
+html, body, #root, .content {
   margin: 0;
   scroll-behavior: smooth;
+  width: 100%;
 }
 html {
   height: 100%;
@@ -8,6 +9,19 @@ html {
 }
 
 section {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
+  width: 100%;
+}
+
+#skills {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
+}
+
+#projects {
+  background: radial-gradient(ellipse at top,  #1b2735 0%,#090a0f 100%);
+}
+
+#contact {
   background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
 
 }

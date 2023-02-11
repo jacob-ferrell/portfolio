@@ -1,0 +1,47 @@
+#contact {
+
+}
+
+#contact-form {
+    margin-top: 15vh;
+    background-color: rgb(53, 53, 53);
+    border-radius: 5px;
+    padding: 12px;
+    padding-top: 4vh;
+    display: flex;
+    flex-direction: column;
+    gap: .5vh;
+    position: relative;
+    width: 30vw;
+    overflow: hidden;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+#contact-form label {
+    display: block;
+    font-weight: bold;
+}
+
+#contact-form input, textarea {
+    width: calc(100% - 5px);
+    outline: none;
+    border: none;
+    border-radius: 2px;
+}
+
+input {
+    height: 1.5rem;
+}
+
+#contact-form button {
+    background-color: rgb(17, 209, 151);
+    color: white;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1000px) {
+    #contact-form {
+        width: 80vw;
+    }
+}
