@@ -30,12 +30,11 @@
     .project img {
         width : 100%;
 
-        margin-top: 1rem;
     }
 
     .project-description {
         text-align: center;
-        height: 2rem;
+        height: fit-content;
         line-height: 1rem;
     }
 
@@ -46,19 +45,24 @@
     img {
         cursor: pointer;
     }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 1000px) {
         .projects-container {
             flex-direction: column;
-            margin-bottom: 10vh;
-            gap: 1rem;
+            margin-bottom: 20vh;
+            gap: .3rem;
         }
         .project {
             width: 50vw;
-            height: 65vw;
+            height: 25.5vh;
             line-height: .5rem;
             justify-content: space-between;
             
 
+        }
+
+        #root .project a {
+            font-size: .6rem;
+            color: rgb(0, 151, 252);
         }
         .skill-heading {
             font-size: 1rem;
