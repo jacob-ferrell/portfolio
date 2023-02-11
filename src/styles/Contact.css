@@ -17,6 +17,7 @@
 }
 
 #contact-form label {
+    color: white;
     display: block;
     font-weight: bold;
 }
@@ -26,6 +27,7 @@
     outline: none;
     border: none;
     border-radius: 2px;
+    background-color: white;
 }
 
 input {
