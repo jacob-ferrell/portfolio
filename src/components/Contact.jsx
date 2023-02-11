@@ -1,13 +1,12 @@
 import "../styles/Contact.css";
-import { useState } from 'react'; 
+import { useState } from "react";
 
 const Contact = (props) => {
+  const [buttonText, setButtonText] = useState("Send");
 
-  const [buttonText, setButtonText] = useState('Send');
-  
   async function handleFormSubmit(e) {
     e.preventDefault();
-    setButtonText('Sending...');
+    setButtonText("Sending...");
     const form = e.target;
     const name = form.elements.name.value;
     const email = form.elements.email.value;
@@ -26,25 +25,20 @@ const Contact = (props) => {
           message,
         }),
       }
-    )
+    );
     const data = await res.json();
-    if (data.success != "true") return setButtonText('Message Failed To Send!')
-    setButtonText('Message Sent!');
+    if (data.success != "true") return setButtonText("Message Failed To Send!");
+    setButtonText("Message Sent!");
     form.reset();
   }
 
   function handleInputFocus() {
-    setButtonText('Send')
+    setButtonText("Send");
   }
 
   return (
     <section id="contact">
-      <form
-        id="contact-form"
-        onSubmit={handleFormSubmit}
-        /* method="POST"
-        action="https://formsubmit.co/c4e769c5bf3c037504b6fcdf6432e3c8" */
-      >
+      <form id="contact-form" onSubmit={handleFormSubmit}>
         {/* Honeypot */}
         <input type="text" name="_honey" style={{ display: "none" }} />
 
@@ -54,11 +48,23 @@ const Contact = (props) => {
         <div className="skill-heading">Contact Me</div>
         <div>
           <label htmlFor="name">Name</label>
-          <input type="text" name="name" placeholder="Your Name" onFocus={handleInputFocus} required />
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            onFocus={handleInputFocus}
+            required
+          />
         </div>
         <div>
           <label htmlFor="email">Email</label>
-          <input name="email" type="email" placeholder="Your Email" onFocus={handleInputFocus} required />
+          <input
+            name="email"
+            type="email"
+            placeholder="Your Email"
+            onFocus={handleInputFocus}
+            required
+          />
         </div>
         <div>
           <label htmlFor="message">Message</label>
