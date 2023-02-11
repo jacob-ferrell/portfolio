@@ -41,7 +41,7 @@ const Home = (props) => {
             id="resume"
             className="home-button hidden"
             onClick={() =>
-              (window.location.href = "https://drive.google.com/file/d/1Lx5QQW3YQfjZ3nqEHiLh-XuziSQvQi6P/view?usp=share_link")
+              (window.location.href = "https://docs.google.com/document/d/1EjZxIKgkSwgWMlyLXrC8quvW_wmdEaaPp8r1xO8JL68/export?format=pdf")
             }
           >
             My Resume
