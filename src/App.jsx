@@ -48,7 +48,7 @@ function App() {
   return (
       <NoScroll>
         <div className="App">
-          {/* <RedirectOnReload /> */}
+          <RedirectOnReload />
           <nav>
             <div id="links-container">
               <a
