@@ -19,6 +19,7 @@
 #contact-form label {
     display: block;
     font-weight: bold;
+    color: white;
 }
 
 #contact-form input, textarea {
@@ -27,6 +28,7 @@
     border: none;
     border-radius: 2px;
     background-color: white;
+    color: black;
 }
 
 input {
