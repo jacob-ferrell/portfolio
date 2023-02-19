@@ -11,7 +11,7 @@
 .description {
   text-align: center;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
   #home {
     font-size: 10vw;
   }
@@ -19,8 +19,6 @@
   #home .description {
     font-size: 7vw;
   }
-
-  .description
 
   #root #greeting {
     gap: 2vh;
@@ -33,6 +31,24 @@
   }
   #root .layer1 {
     background-image: url("../assets/backgrounds/wave-mobile2.svg"), url("../assets/backgrounds/wave-upper-mobile.svg");
+  }
+  #link-container img {
+    max-width: calc(64px - 10rem);
+  }
+  
+  #root #linkedin {
+    height: 2rem;
+    width: auto;
+  }
+  
+  #root #email {
+    height: 2.2rem;
+    width: auto;
+  }
+
+  #root #github {
+    height: 2.6rem;
+    width: auto;
   }
 }
 
@@ -103,4 +119,32 @@
   width: 17vh;
   max-width: 195px;
   margin-bottom: .8vh;
+}
+
+#link-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#link-container img {
+  max-width: 64px;
+}
+
+#linkedin {
+  height: 50px;
+  width: auto;
+}
+
+#email {
+  width: 55px;
+}
+
+.grow {
+  transition: all .5s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.2);
 }
