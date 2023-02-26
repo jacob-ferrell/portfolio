@@ -62,11 +62,11 @@ const Home = (props) => {
           </button>
           
         </div>
-        <div id="link-container">
+        {/* <div id="link-container">
             <a href="#contact" className="grow"><img id="email" src={email} alt="Email" /></a>
             <a href="https://www.linkedin.com/in/mjferrell" className="grow"><img id="linkedin" src={linkedin} alt="LinkedIn" /></a>
             <a href="https://www.github.com/jacob-ferrell" className="grow"><img id="github" src={github} alt="GitHub" /></a>
-          </div>
+          </div> */}
       </div>
     </section>
   );

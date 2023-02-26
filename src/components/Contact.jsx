@@ -8,9 +8,6 @@ const Contact = (props) => {
     e.preventDefault();
     setButtonText("Sending...");
     const form = e.target;
-    const name = form.elements.name.value;
-    const email = form.elements.email.value;
-    const message = form.elements.message.value;
     const res = await fetch(
       "https://formsubmit.co/ajax/c4e769c5bf3c037504b6fcdf6432e3c8",
       {
@@ -19,11 +16,7 @@ const Contact = (props) => {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify({
-          name,
-          email,
-          message,
-        }),
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
       }
     );
     const data = await res.json();
