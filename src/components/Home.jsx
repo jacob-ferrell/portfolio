@@ -2,9 +2,9 @@ import "../styles/Home.css";
 import "../styles/stars.css";
 import wave from "../assets/backgrounds/wave.svg";
 import waveMobile from "../assets/backgrounds/wave-mobile3.svg";
-import linkedin from "../assets/softwareLogos/linkedin.png"
-import github from "../assets/softwareLogos/github-white.png"
-import email from '../assets/softwareLogos/email.png'
+import linkedin from "../assets/softwareLogos/linkedin.png";
+import github from "../assets/softwareLogos/github-white.png";
+import email from "../assets/softwareLogos/email.png";
 import { useState, useEffect } from "react";
 
 const Home = (props) => {
@@ -32,7 +32,7 @@ const Home = (props) => {
       <div className="stars"></div>
       <div className="twinkling"></div>
 
-      <img id="wave" src={imgSrc}></img>
+      <img id="wave" src={imgSrc} alt="wave-background"></img>
       <div id="greeting">
         <div id="text-container">
           <div className="name hidden">Jacob Ferrell</div>
@@ -54,19 +54,23 @@ const Home = (props) => {
             href="#projects"
             className="home-button hidden"
             onClick={() => {
-              /* window.location.href = "#projects" */
               document.getElementById("projects-link").click();
             }}
           >
             My Projects
           </button>
-          
         </div>
-        {/* <div id="link-container">
-            <a href="#contact" className="grow"><img id="email" src={email} alt="Email" /></a>
-            <a href="https://www.linkedin.com/in/mjferrell" className="grow"><img id="linkedin" src={linkedin} alt="LinkedIn" /></a>
-            <a href="https://www.github.com/jacob-ferrell" className="grow"><img id="github" src={github} alt="GitHub" /></a>
-          </div> */}
+        <div id="link-container">
+          <a href="#contact" className="grow">
+            <img id="email" src={email} alt="Email" />
+          </a>
+          <a href="https://www.linkedin.com/in/mjferrell" className="grow">
+            <img id="linkedin" src={linkedin} alt="LinkedIn" />
+          </a>
+          <a href="https://www.github.com/jacob-ferrell" className="grow">
+            <img id="github" src={github} alt="GitHub" />
+          </a>
+        </div>
       </div>
     </section>
   );

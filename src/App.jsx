@@ -1,46 +1,42 @@
 import "./index.css";
-import { useState, useEffect } from "react";
+import "./styles/stars.css";
+import { useEffect } from "react";
 import Home from "./components/Home";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import "./styles/stars.css";
-import NoScroll from "./components/NoScroll";
-import RedirectOnReload from "./components/RedirectOnReload";
+import NoScroll from "./hooks/NoScroll";
+import RedirectOnReload from "./hooks/RedirectOnReload";
 
 function App() {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        /* const id = entry.target.id;
-        const headerLink = document.getElementById(`${id}-link`); */
-        /* document
-          .querySelectorAll(".links-container a")
-          .forEach((link) => link.classList.remove("section-in-view")); */
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
-          /* if (entry.target.classList.includes('home-button')) {
-            entry.target.addEventListener('mouseover', () => {
-              const button = entry.target;
-              const prevDelay = entry.target.style.transitionDelay;
-              button.classList.add('button-hover');
-            })
-          } */
-          //headerLink.classList.add("section-in-view");
         } else {
           entry.target.classList.remove("show");
           entry.target.classList.remove("button-hover");
-          //headerLink.classList.remove("section-in-view");
         }
       });
+
+
     });
     const hiddenElements = document.querySelectorAll(".hidden");
     hiddenElements.forEach((el) => observer.observe(el));
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   function handleLinkClick(e) {
     clearLinks();
     e.target.classList.add("section-in-view");
+  }
+
+  function handleResize() {
+    document.querySelector('.section-in-view').click();
   }
 
   function clearLinks() {
@@ -63,9 +59,6 @@ function App() {
               >
                 Home
               </a>
-              {/* <a href="#about" id="about-link">
-              About
-            </a> */}
               <a
                 href="#skills"
                 id="skills-heading-link"
