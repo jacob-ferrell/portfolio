@@ -10,7 +10,7 @@ const Projects = (props) => {
       img: bugTracker,
       description: "A project management app created using the MERN stack",
       repo: "https://github.com/jacob-ferrell/bug-tracker",
-      demo: "https://bugtracker.jacob-ferrell.com/",
+      demo: "https://bug-tracker-rcf6.onrender.com/",
     },
     {
       name: "CookBook",
