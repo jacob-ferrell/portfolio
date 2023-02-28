@@ -49,7 +49,7 @@ a {
   color: white;
   text-decoration: inherit;
 }
-a:hover {
+a:not(.no-hover):hover {
   color: #e31b6d;
   transition: .4s;
 }

@@ -19,6 +19,10 @@
         height: fit-content;
     }
 
+    #project .no-hover {
+        color: white;
+    }
+
     #root #bug-tracker {
         transition-delay: 400ms;
     }
@@ -60,9 +64,13 @@
 
         }
 
-        #root .project a {
+        #root .project-link {
             font-size: .6rem;
             color: rgb(0, 151, 252);
+        }
+
+        #root .no-hover {
+            font-size: .8rem;
         }
         .skill-heading {
             font-size: 1rem;
