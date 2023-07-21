@@ -1,10 +1,39 @@
 import "../styles/Projects.css";
 import "../styles/Skills.css";
+import { useState, useEffect } from "react";
 import bugTracker from "../assets/projectScreenshots/bug-tracker-screenshot2.png";
 import cookBook from "../assets/projectScreenshots/cookbook-screenshot.png";
+import chesstopia from "../assets/projectScreenshots/chesstopia.gif";
+import kebabCase from "../utils/kebabCase";
+import ProjectDetails from "./ProjectDetails";
 
 const Projects = (props) => {
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1000);
+
+  useEffect(() => {
+    // Function to handle window resize
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 1000);
+    };
+
+    // Add event listener to track window resize
+    window.addEventListener("resize", handleResize);
+
+    // Remove event listener when component is unmounted
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const projects = [
+    {
+      name: "Chesstopia",
+      img: chesstopia,
+      description:
+        "An online chess game created with React, Java/Spring and PostgreSQL featuring real-time multiplayer play",
+      repo: "https://github.com/jacob-ferrell/chesstopia",
+      demo: "https://jacob-ferrell.com/chesstopia",
+    },
     {
       name: "Bug Tracker",
       img: bugTracker,
@@ -20,35 +49,34 @@ const Projects = (props) => {
       repo: "https://github.com/jacob-ferrell/django-recipe-book",
       demo: "https://cookbook.jacob-ferrell.com/",
     },
+    
   ].map((project) => {
+    const { name, demo, img } = project;
+    const id = kebabCase(name);
     return (
-      <div
-        id={kebabCase(project.name)}
-        className="project hidden"
-        key={project.name}
-      >
+      <div id={id} className="project hidden" key={name}>
         <div className="skill-heading">
-          <a className="no-hover" href={project.demo}>
-            {project.name}
+          <a className="no-hover" href={demo}>
+            {name}
           </a>
         </div>
-        <a href={project.demo}>
-          <img src={project.img} alt={project.name + "-thumbnail"}></img>
+        <a href={demo}>
+            <img
+              className={`${kebabCase(name)}-img`}
+              src={img}
+              alt={name + "-thumbnail"}
+            ></img>
         </a>
-        <div className="project-description">{project.description}</div>
-        <a href={project.repo} className="project-link">-GitHub Repo-</a>
-        <a href={project.demo} className="project-link">-Live Demo-</a>
+        {name == "Chesstopia" && isSmallScreen ? (
+          <div className="description-container">
+            <ProjectDetails project={project} />
+          </div>
+        ) : (
+          <ProjectDetails project={project} />
+        )}
       </div>
     );
   });
-
-  const images = {
-    "bug-tracker": bugTracker,
-  };
-
-  function kebabCase(str) {
-    return str.toLowerCase().replace(/\s/g, "-");
-  }
 
   return (
     <>

@@ -9,8 +9,12 @@ import bootstrap from "../assets/softwareLogos/bootstrap.png";
 import node from "../assets/softwareLogos/node.png";
 import express from "../assets/softwareLogos/express.png";
 import mongo from "../assets/softwareLogos/mongo.png";
-import django from '../assets/softwareLogos/django.jpg'
-import python from '../assets/softwareLogos/python.png'
+import django from '../assets/softwareLogos/django.jpg';
+import python from '../assets/softwareLogos/python.png';
+import java from '../assets/softwareLogos/java.png';
+import spring from '../assets/softwareLogos/spring.png';
+import postgres from '../assets/softwareLogos/postgres.png';
+import tailwind from '../assets/softwareLogos/tailwind.png';
 
 const Skills = (props) => {
   const createSkills = (skills) => {
@@ -30,6 +34,7 @@ const Skills = (props) => {
     Javascript: js,
     "React JS": react,
     Bootstrap: bootstrap,
+    TailwindCSS: tailwind,
   };
 
   const backEnd = {
@@ -37,7 +42,10 @@ const Skills = (props) => {
     "Express.js": express,
     MongoDB: mongo,
     Django: django,
-    Python: python
+    Python: python,
+    Java: java,
+    Spring: spring,
+    PostgreSQL: postgres
   };
 
   const versionControl = {

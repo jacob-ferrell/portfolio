@@ -1,9 +1,8 @@
-#skills {
-}
+
 
 .skills {
     width: 20vh;
-    height: 30vh;
+    height: 33vh;
     background-color: rgb(53, 53, 53);
     border-radius: 5px;
     padding: .7vh;
@@ -16,7 +15,7 @@
 @media screen and (max-width: 600px) {
     #root .skills {
         width: 27vw;
-        height: 20vh;
+        height: 32vh;
     }
     #skills .skill-heading {
         font-size: 3vw;
