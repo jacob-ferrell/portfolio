@@ -13,11 +13,11 @@ cd dist
 # place .nojekyll to bypass Jekyll processing
 echo > .nojekyll
 
+# if you are deploying to a custom domain
+echo 'jacobferrell.net' > CNAME
 # copy CNAME to build folder
 cp ../CNAME .
 
-# if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
 
 git init
 git checkout -B main
