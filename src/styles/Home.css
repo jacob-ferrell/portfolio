@@ -87,6 +87,9 @@
   text-align: center;
 
 }
+#greeting .title {
+  font-size: 5rem;
+}
 .description {
   color: white;
   font-size: 6vh;

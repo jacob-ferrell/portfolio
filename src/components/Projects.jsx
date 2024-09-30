@@ -9,6 +9,7 @@ import ProjectDetails from "./ProjectDetails";
 
 const Projects = (props) => {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1000);
+  const [isHidden, setIsHidden] = useState(true);
 
   useEffect(() => {
     // Function to handle window resize
@@ -25,6 +26,11 @@ const Projects = (props) => {
     };
   }, []);
 
+  function handleTransitionEnd() {
+    setIsHidden(false);
+  }
+
+
   const projects = [
     {
       name: "Chesstopia",
@@ -39,7 +45,7 @@ const Projects = (props) => {
       img: bugTracker,
       description: "A project management app created using the MERN stack",
       repo: "https://github.com/jacob-ferrell/bug-tracker",
-      demo: "https://bug-tracker-rcf6.onrender.com/",
+      demo: "https://bugtracker.jacobferrell.net",
     },
     {
       name: "CookBook",
@@ -50,11 +56,11 @@ const Projects = (props) => {
       demo: "https://cookbook.jacob-ferrell.com/",
     },
     
-  ].map((project) => {
+  ].map((project, i, p) => {
     const { name, demo, img } = project;
     const id = kebabCase(name);
     return (
-      <div id={id} className="project hidden" key={name}>
+      <div id={id} onTransitionEnd={i === p.length - 1 ? handleTransitionEnd : null} className={`project ${isHidden ? 'hidden' : ''}`} key={name}>
         <div className="skill-heading">
           <a className="no-hover" href={demo}>
             {name}
@@ -81,7 +87,7 @@ const Projects = (props) => {
   return (
     <>
       <section id="projects">
-        <h1 className="section-heading hidden">Projects</h1>
+        <h1 className={`section-heading ${isHidden ? 'hidden' : ''}`}>Projects</h1>
         <div className="projects-container">{projects}</div>
       </section>
     </>

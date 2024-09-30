@@ -15,6 +15,7 @@ import java from '../assets/softwareLogos/java.png';
 import spring from '../assets/softwareLogos/spring.png';
 import postgres from '../assets/softwareLogos/postgres.png';
 import tailwind from '../assets/softwareLogos/tailwind.png';
+import { useState } from "react";
 
 const Skills = (props) => {
   const createSkills = (skills) => {
@@ -27,6 +28,11 @@ const Skills = (props) => {
       );
     });
   };
+  const [isHidden, setIsHidden] = useState(true);
+
+  function handleTransitionEnd() {
+    setIsHidden(false);
+  }
 
   const frontEnd = {
     HTML5: html,
@@ -55,21 +61,22 @@ const Skills = (props) => {
 
   return (
     <section id="skills">
-      <h1 id='skills-heading' className="section-heading hidden">Skills</h1>
+      <h1 id='skills-heading' className="section-heading">Skills</h1>
       <div className="skills-container">
-        <div className="front-end-container skills hidden">
+        <div className={`front-end-container skills ${isHidden ? 'hidden' : ''}`}>
           <div className="skill-heading">
             <span>Front End</span>
           </div>
           {createSkills(frontEnd)}
         </div>
-        <div className="back-end-container skills hidden">
+        <div className={`back-end-container skills ${isHidden ? 'hidden' : ''}`}>
           <div className="skill-heading">Back End</div>
           {createSkills(backEnd)}
         </div>
-        <div className="other-skills skills hidden">
-          <div className="skill-heading">Version Control</div>
-
+        <div onTransitionEnd={handleTransitionEnd} className={`other-skills skills ${isHidden ? 'hidden' : ''}`}>
+          <div 
+            className="skill-heading"
+          >Version Control</div>
           {createSkills(versionControl)}
         </div>
       </div>

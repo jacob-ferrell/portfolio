@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 
 const Home = (props) => {
   const [imgSrc, setImgSrc] = useState(wave);
+  const [isHidden, setIsHidden] = useState(true);
 
   useEffect(() => {
     const handleMediaQuery = () => {
@@ -27,6 +28,10 @@ const Home = (props) => {
     };
   }, []);
 
+  function handleTransitionEnd() {
+    setIsHidden(false);
+  }
+
   return (
     <section id="home" className="wave layer1">
       <div className="stars"></div>
@@ -35,13 +40,13 @@ const Home = (props) => {
       <img id="wave" src={imgSrc} alt="wave-background"></img>
       <div id="greeting">
         <div id="text-container">
-          <div className="name hidden">Jacob Ferrell</div>
-          <div className="description hidden">full-stack web developer</div>
+          <div className={`name ${isHidden ? 'hidden' : ''}`}>Jacob Ferrell</div>
+          <div className={`title ${isHidden ? 'hidden' : ''}`}>Software Engineer</div>
         </div>
         <div id="buttons-container">
           <button
             id="resume"
-            className="home-button hidden"
+            className={`home-button ${isHidden ? 'hidden' : ''}`}
             onClick={() =>
               (window.location.href =
                 "https://docs.google.com/document/d/1EjZxIKgkSwgWMlyLXrC8quvW_wmdEaaPp8r1xO8JL68/export?format=pdf")
@@ -52,7 +57,8 @@ const Home = (props) => {
           <button
             id="view-work"
             href="#projects"
-            className="home-button hidden"
+            className={`home-button ${isHidden ? 'hidden' : ''}`}
+            onTransitionEnd={handleTransitionEnd}
             onClick={() => {
               document.getElementById("projects-link").click();
             }}
