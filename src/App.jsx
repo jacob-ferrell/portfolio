@@ -46,7 +46,6 @@ function App() {
   }
 
   return (
-      <NoScroll>
         <div className="App">
           <RedirectOnReload />
           <nav>
@@ -82,7 +81,6 @@ function App() {
             <Contact />
           </div>
         </div>
-      </NoScroll>
   );
 }
 
