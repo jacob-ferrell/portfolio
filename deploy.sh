@@ -14,7 +14,7 @@ cd dist
 echo > .nojekyll
 
 # if you are deploying to a custom domain
-echo 'jacobferrell.net' > CNAME
+echo 'jacobferrell.net' > ../CNAME
 # copy CNAME to build folder
 cp ../CNAME .
 
